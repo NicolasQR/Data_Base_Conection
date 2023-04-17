@@ -17,16 +17,17 @@ public class ItemProvider {
         String releasedate;
         String videorelease;
 
-        String sql = "INSERT INTO item(id, title, releasedate, videorelease) VALUES ($ID,'$TITLE', '$RELEASEDATE', '$VIDEORELEASE')";
+        String sql = "INSERT INTO item(id, title, releasedate, videorelease, url) VALUES ($ID,'$TITLE', '$RELEASEDATE', '$VIDEORELEASE', '$URL')";
         sql = sql.replace("$ID", item.getId() + "");
         sql = sql.replace("$TITLE", item.getTitle());
         sql = sql.replace("$RELEASEDATE", item.getReleasedate());
         sql = sql.replace("$VIDEORELEASE", item.getVideorelease());
+        sql = sql.replace("$URL", item.getUrl());
         DBConnection connection = new DBConnection();
         connection.connect();
         connection.commandSQL(sql);
         connection.disconnect();
-        addGenre(item);
+        //addGenre(item);
     }
 
     public void addGenre(Item item) throws SQLException {
@@ -40,7 +41,7 @@ public class ItemProvider {
         }
         connection.disconnect();
     }
-
+ /**
     public ArrayList<Item> getAllItems() throws SQLException {
         ArrayList<Item> output = new ArrayList<>();
 
@@ -61,6 +62,7 @@ public class ItemProvider {
         connection.disconnect();
         return output;
     }
+  **/
 
     /**
     public void deleteByIdCliente(int id) throws SQLException {

@@ -18,6 +18,7 @@ CREATE TABLE genre (
     genre VARCHAR2(100)
 );
 
+
 CREATE TABLE occupation (
     occupation_name VARCHAR2(100) PRIMARY KEY
 );
@@ -26,8 +27,10 @@ CREATE TABLE item (
     id NUMBER PRIMARY KEY,
     title VARCHAR2(100),
     releasedate VARCHAR2(50),
-    videorelease VARCHAR2(200)
+    videorelease VARCHAR2(200),
+    url VARCHAR2(300)
 );
+
 
 
 CREATE TABLE item_genre (
@@ -42,7 +45,7 @@ CREATE TABLE users (
     age NUMBER,
     gender VARCHAR2(1),
     occupation_name VARCHAR2(100),
-    zipcode NUMBER,
+    zipcode VARCHAR(100),
     CONSTRAINT fk_occupation_name FOREIGN KEY (occupation_name) REFERENCES 
 occupation(occupation_name)
 );

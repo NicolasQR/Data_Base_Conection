@@ -5,9 +5,9 @@ public class User {
     private int age;
     private String genre;
     private String occupation;
-    private long zipcode;
+    private String zipcode;
 
-    public User(int id, int age, String genre, String occupation, long zipcode) {
+    public User(int id, int age, String genre, String occupation, String zipcode) {
         this.id = id;
         this.age = age;
         this.genre = genre;
@@ -47,11 +47,11 @@ public class User {
         this.occupation = occupation;
     }
 
-    public long getZipcode() {
+    public String getZipcode() {
         return zipcode;
     }
 
-    public void setZipcode(long zipcode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 }

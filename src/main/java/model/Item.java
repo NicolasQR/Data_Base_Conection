@@ -8,14 +8,24 @@ public class Item {
     private String title;
     private String releasedate;
     private String videorelease;
+    private String url;
     private ArrayList<Genre> genre;
 
-    public Item(int id, String title, String releasedate, String videorelease, ArrayList<Genre> genre) {
+    public Item(int id, String title, String releasedate, String videorelease, String url, ArrayList<Genre> genre) {
         this.id = id;
         this.title = title;
         this.releasedate = releasedate;
+        this.url = url;
         this.videorelease = videorelease;
         this.genre = genre;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public int getId() {

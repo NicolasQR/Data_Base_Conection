@@ -39,6 +39,20 @@ public class GenreProvider {
         return output;
     }
 
+    public Genre getGenre(String genre_name) throws SQLException {
+
+        String sql = "SELECT * FROM genre WHERE genre.genre = '" + genre_name + "'";
+        DBConnection connection = new DBConnection();
+        connection.connect();
+        Genre output = null;
+        ResultSet resultSet = connection.getDataBySQL(sql);
+        while (resultSet.next()){
+            output = new Genre(resultSet.getInt(1), resultSet.getString(2));
+        }
+        connection.disconnect();
+        return output;
+    }
+
     /**
     public void deleteByIdCliente(int id) throws SQLException {
         String sql = "DELETE FROM clientes WHERE id="+id;

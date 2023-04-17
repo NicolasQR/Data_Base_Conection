@@ -16,7 +16,7 @@ public class UserProvider {
         int age;
         char gender;
         String occupation;
-        long zipcode;
+        String zipcode;
         String sql = "INSERT INTO users(id, age, gender, occupation_name, zipcode) VALUES ('$ID','$AGE', '$GENDER', '$OCCUPATION_NAME', '$ZIPCODE')";
         sql = sql.replace("$ID", user.getId() + "");
         sql = sql.replace("$AGE", user.getAge() + "");
@@ -43,7 +43,7 @@ public class UserProvider {
                     resultSet.getInt(2),
                     resultSet.getString(3),
                     resultSet.getString(4),
-                    resultSet.getLong(5)
+                    resultSet.getString(5)
             ));
         }
         connection.disconnect();
